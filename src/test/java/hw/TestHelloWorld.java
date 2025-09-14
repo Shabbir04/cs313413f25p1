@@ -38,15 +38,17 @@ public class TestHelloWorld {
     assertEquals(2025, fixture.getYear());
   }
 
-  @Test
-  public void getMessageInList() { // this test is broken - fix it!
-    var list = Arrays.asList(fixture);
-    assertEquals("hello world", list.get(0).getMessage());
-  }
+    @Test
+    public void getMessageInList() {
+        var list = Arrays.asList(fixture.getMessage());
+        assertEquals("hello world", list.get(0));
+    }
 
-  @Test
-  public void getYearInList() { // this test is broken - fix it!
-    var list = Arrays.asList(fixture);
-    assertEquals(2025, list.get(0).getYear());
-  }
+
+    @Test
+    public void getYearInList() {
+        var list = Arrays.asList(fixture.getYear());
+        assertEquals(2025, list.get(0).intValue());
+    }
+
 }
