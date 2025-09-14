@@ -9,45 +9,44 @@ import org.junit.Test;
 
 public class TestHelloWorld {
 
-    private HelloWorld fixture;
+  private HelloWorld fixture;
 
-    @Before
-    public void setUp() throws Exception {
-        fixture = new HelloWorld();
-    }
+  @Before
+  public void setUp() throws Exception {
+    fixture = new HelloWorld();
+  }
 
-    @After
-    public void tearDown() throws Exception {
-        fixture = null;
-    }
+  @After
+  public void tearDown() throws Exception {
+    fixture = null;
+  }
 
-    @Test
-    public void initialization() {
-        assertNotNull(fixture);
-    }
+  @Test
+  public void initialization() { // this test is OK as-is, it should pass with no problem
+    assertNotNull(fixture);
+  }
 
-    @Test
-    public void getMessage() {
-        assertNotNull(fixture);
-        assertEquals("hello world", fixture.getMessage());
-    }
+  @Test
+  public void getMessage() { // this test is OK as-is, it should pass with no problem
+    assertNotNull(fixture);
+    assertEquals("hello world", fixture.getMessage());
+  }
 
-    @Test
-    public void getYear() {
-        assertNotNull(fixture);
-        assertEquals(2025, fixture.getYear());
-    }
+  @Test
+  public void getYear() { // this test is OK, fix HelloWorld.java to make it pass!
+    assertNotNull(fixture);
+    assertEquals(2025, fixture.getYear());
+  }
 
-    @Test
-    public void getMessageInList() {
-        var list = Arrays.asList(fixture.getMessage());
-        assertEquals("hello world", list.get(0));
-    }
+  @Test
+  public void getMessageInList() { // this test is broken - fix it!
+    var list = Arrays.asList(fixture);
+    assertEquals("hello world", list.get(0).getMessage());
+  }
 
-    @Test
-    public void getYearInList() {
-        var list = Arrays.asList(fixture.getYear());
-        assertEquals(2025, list.get(0).intValue());
-    }
+  @Test
+  public void getYearInList() { // this test is broken - fix it!
+    var list = Arrays.asList(fixture);
+    assertEquals(2025, list.get(0).getYear());
+  }
 }
-
